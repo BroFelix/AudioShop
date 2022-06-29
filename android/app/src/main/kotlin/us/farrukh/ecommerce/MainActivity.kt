@@ -1,4 +1,4 @@
-package us.farrukh.e_commerce
+package us.farrukh.ecommerce
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -43,6 +43,7 @@ captures/
 
 # IntelliJ
 *.iml
+.idea/
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
@@ -218,7 +219,7 @@ hs_err_pid*
 # Java class files
 
 # Generated files
-
+*.g.dart
 # Gradle files
 .gradle
 
