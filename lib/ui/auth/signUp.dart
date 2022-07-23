@@ -23,18 +23,14 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     final appState = context.read<AppState>();
-    final mediaQuery = MediaQuery.of(context);
-    final size = mediaQuery.size;
-    final screenHeight = size.height;
-    final screenWidth = size.width;
 
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
           body: SingleChildScrollView(
             child: Container(
-              height: screenHeight,
-              width: screenWidth,
+              height: constraints.maxHeight,
+              width: constraints.maxWidth,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: Image.asset('assets/images/background.png').image,
@@ -52,12 +48,13 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     child: Text(
                       'Audio',
-                      style: AppTextStyle.header.copyWith(color: AppColors.white),
+                      style:
+                          AppTextStyle.header.copyWith(color: AppColors.white),
                     ),
                   ),
                   Text(
                     'It\'s modular and designed to last',
-                    style: AppTextStyle.subHeader.copyWith(color: AppColors.white),
+                    style: AppTextStyle.title0.copyWith(color: AppColors.white),
                   ),
                   Expanded(child: SizedBox()),
                   Padding(
@@ -120,17 +117,21 @@ class _SignUpPageState extends State<SignUpPage> {
                       bottom: 24.0,
                     ),
                     child: MaterialButton(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                      height: 100.h,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      height: constraints.maxHeight < 700 ? 120.h : 100.h,
                       minWidth: 400,
                       color: Colors.green[300],
                       child: Text(
                         "Sign Up",
-                        style: AppTextStyle.buttonText.copyWith(color: AppColors.white),
+                        style: AppTextStyle.buttonText
+                            .copyWith(color: AppColors.white),
                       ),
                       onPressed: () {
-                        appState.currentAction =
-                            PageAction(state: PageState.replace, page: homeConfig);
+                        appState.currentAction = PageAction(
+                          state: PageState.replace,
+                          page: homeConfig,
+                        );
                       },
                     ),
                   ),
@@ -138,7 +139,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       MaterialButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12)),
                         height: 65,
                         minWidth: 65,
                         color: AppColors.cleanWhite,
@@ -147,7 +149,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       SizedBox(width: 18.0),
                       MaterialButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12)),
                         height: 65,
                         minWidth: 65,
                         color: AppColors.cleanWhite,
@@ -156,7 +159,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       SizedBox(width: 18.0),
                       MaterialButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12)),
                         height: 65,
                         minWidth: 65,
                         color: AppColors.cleanWhite,
@@ -170,8 +174,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   RichText(
                     text: TextSpan(
-                      style: AppTextStyle.subHeader
-                          .copyWith(color: AppColors.white, fontWeight: FontWeight.w400),
+                      style: AppTextStyle.title0.copyWith(
+                          color: AppColors.white, fontWeight: FontWeight.w400),
                       text: "If you have an account? ",
                       children: [
                         TextSpan(

@@ -220,6 +220,7 @@ hs_err_pid*
 
 # Generated files
 *.g.dart
+*.freezed.dart
 # Gradle files
 .gradle
 

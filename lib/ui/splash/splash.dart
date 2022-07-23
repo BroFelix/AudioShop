@@ -14,6 +14,16 @@ class _SplashPageState extends State<SplashPage> {
   bool _initialized = false;
 
   @override
+  void didUpdateWidget(covariant SplashPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (_initialized) return;
@@ -24,11 +34,13 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     appState = Provider.of<AppState>(context);
-    final mediaQuery = MediaQuery.of(context);
-    final size = mediaQuery.size;
 
-    return ColoredBox(
-      color: Colors.red,
+    return Container(
+      color: Colors.greenAccent,
+      alignment: Alignment.center,
+      child: FlutterLogo(
+        size: 128.0,
+      ),
     );
   }
 }

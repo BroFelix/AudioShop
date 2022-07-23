@@ -8,6 +8,14 @@ abstract class AppTextStyle {
     fontSize: 36.sp,
     fontWeight: FontWeight.bold,
   );
+
+  static final TextStyle searchField = GoogleFonts.dmSans(fontSize: 24.sp);
+
+  static final TextStyle tabTitle = GoogleFonts.dmSans(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w500,
+  );
+
   static final TextStyle buttonText = GoogleFonts.dmSans(
     fontSize: 28.sp,
     fontWeight: FontWeight.w500,
@@ -18,38 +26,31 @@ abstract class AppTextStyle {
     fontWeight: FontWeight.w500,
   );
 
-  static final TextStyle subHeader = GoogleFonts.dmSans(
-    fontSize: 24.sp,
+  static final TextStyle header0 = GoogleFonts.montserrat(
+    fontSize: 48.sp,
+    fontWeight: FontWeight.bold,
+  );
+
+  static final TextStyle title1 = GoogleFonts.dmSans(
+    fontSize: 32.sp,
     fontWeight: FontWeight.normal,
   );
 
   static final TextStyle title = GoogleFonts.dmSans(
     fontSize: 28.sp,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.normal,
   );
 
-  static final TextStyle link = GoogleFonts.dmSans(
+  static final TextStyle title0 = GoogleFonts.dmSans(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.normal,
+  );
+
+  static final TextStyle subTitle = GoogleFonts.dmSans(fontSize: 22.sp);
+
+  static final TextStyle linkText = GoogleFonts.dmSans(
     fontSize: 24.sp,
     fontWeight: FontWeight.w500,
     color: AppColors.green,
-  );
-
-  static final TextStyle linkText = GoogleFonts.dmSans(
-    fontSize: 32.sp,
-    fontWeight: FontWeight.w500,
-  );
-
-  static final TextStyle headText = GoogleFonts.montserrat(
-    fontSize: 48.sp,
-    fontWeight: FontWeight.bold,
-  );
-
-  static final TextStyle searchField = GoogleFonts.dmSans(
-    fontSize: 24.sp,
-  );
-
-  static final TextStyle tabTitle = GoogleFonts.dmSans(
-    fontSize: 24.sp,
-    fontWeight: FontWeight.w500,
   );
 }

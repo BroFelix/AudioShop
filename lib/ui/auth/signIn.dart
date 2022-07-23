@@ -25,18 +25,13 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     appState = context.read<AppState>();
-    final mediaQuery = MediaQuery.of(context);
-    final size = mediaQuery.size;
-    final screenHeight = size.height;
-    final screenWidth = size.width;
-
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
           body: SingleChildScrollView(
             child: Container(
-              height: screenHeight,
-              width: screenWidth,
+              height: constraints.maxHeight,
+              width: constraints.maxWidth,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: Image.asset('assets/images/background.png').image,
@@ -51,12 +46,13 @@ class _SignInPageState extends State<SignInPage> {
                     padding: EdgeInsets.only(top: 120.h, bottom: 4.h),
                     child: Text(
                       'Audio',
-                      style: AppTextStyle.header.copyWith(color: AppColors.white),
+                      style:
+                          AppTextStyle.header.copyWith(color: AppColors.white),
                     ),
                   ),
                   Text(
                     'It\'s modular and designed to last',
-                    style: AppTextStyle.subHeader.copyWith(color: AppColors.white),
+                    style: AppTextStyle.title0.copyWith(color: AppColors.white),
                   ),
                   Expanded(child: Container()),
                   Padding(
@@ -120,13 +116,15 @@ class _SignInPageState extends State<SignInPage> {
                   Padding(
                     padding: const EdgeInsets.all(24.0),
                     child: MaterialButton(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                      height: 100.h,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      height: constraints.maxHeight < 700 ? 120.h : 100.h,
                       minWidth: double.infinity,
                       color: Colors.green[300],
                       child: Text(
                         "Sign In",
-                        style: AppTextStyle.buttonText.copyWith(color: Colors.white),
+                        style: AppTextStyle.buttonText
+                            .copyWith(color: Colors.white),
                       ),
                       onPressed: () {
                         appState.currentAction = PageAction(
@@ -138,8 +136,8 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   RichText(
                     text: TextSpan(
-                      style: AppTextStyle.subHeader
-                          .copyWith(color: Colors.white, fontWeight: FontWeight.w400),
+                      style: AppTextStyle.title0.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.w400),
                       text: "Don\'t have any account? ",
                       children: [
                         TextSpan(

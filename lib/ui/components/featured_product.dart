@@ -1,6 +1,7 @@
 import 'package:ecommerce/res/colors.dart';
 import 'package:ecommerce/res/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FeaturedProduct extends StatelessWidget {
   const FeaturedProduct({
@@ -31,7 +32,7 @@ class FeaturedProduct extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: AppTextStyle.headText,
+                style: AppTextStyle.header0,
               ),
               const SizedBox(height: 16.0),
               InkWell(
@@ -42,7 +43,7 @@ class FeaturedProduct extends StatelessWidget {
                   children: [
                     Text(
                       "Shop now",
-                      style: AppTextStyle.link,
+                      style: AppTextStyle.linkText,
                     ),
                     const SizedBox(width: 8.0),
                     Icon(
@@ -56,8 +57,8 @@ class FeaturedProduct extends StatelessWidget {
           ),
           Image.asset(
             imageUrl,
-            height: 150.0,
-            width: 150.0,
+            height: 250.h,
+            width: 250.w,
           ),
         ],
       ),

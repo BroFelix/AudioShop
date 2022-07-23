@@ -10,6 +10,7 @@ class ProductCard extends StatelessWidget {
     required this.price,
     required this.first,
     required this.last,
+    required this.onPressed,
   }) : super(key: key);
 
   final bool first;
@@ -17,49 +18,53 @@ class ProductCard extends StatelessWidget {
   final String title;
   final String imageUrl;
   final int price;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      margin: EdgeInsets.only(
-        top: 8.0,
-        bottom: 8.0,
-        left: first ? 0.0 : 8.0,
-        right: last ? 0.0 : 8.0,
-      ),
-      padding: EdgeInsets.all(8.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
-        color: AppColors.cleanWhite,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            imageUrl,
-            // alignment: Alignment.center,
-            height: 160.h,
-            width: 220.w,
-          ),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w500,
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(
+          top: 8.0,
+          bottom: 8.0,
+          left: first ? 0.0 : 8.0,
+          right: last ? 0.0 : 8.0,
+        ),
+        padding: EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          color: AppColors.cleanWhite,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              imageUrl,
+              // alignment: Alignment.center,
+              height: 160.h,
+              width: 220.w,
             ),
-            textAlign: TextAlign.start,
-          ),
-          Text(
-            "USD $price",
-            style: TextStyle(
-              fontSize: 24.sp,
-              fontWeight: FontWeight.bold,
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 24.sp,
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.start,
             ),
-            textAlign: TextAlign.start,
-          ),
-        ],
+            Text(
+              "USD $price",
+              style: TextStyle(
+                fontSize: 24.sp,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.start,
+            ),
+          ],
+        ),
       ),
     );
   }

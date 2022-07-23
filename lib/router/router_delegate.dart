@@ -5,6 +5,8 @@ import 'package:ecommerce/ui/auth/signIn.dart';
 import 'package:ecommerce/ui/auth/signUp.dart';
 import 'package:ecommerce/ui/home/home.dart';
 import 'package:ecommerce/ui/search/search.dart';
+import 'package:ecommerce/ui/shop/detail.dart';
+import 'package:ecommerce/ui/shop/explore.dart';
 import 'package:ecommerce/ui/splash/splash.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +30,8 @@ class AppRouterDelegate extends RouterDelegate<PageConfiguration>
 
   int numPages() => pages.length;
 
-  PageConfiguration get currentConfiguration => _pages.last.arguments as PageConfiguration;
+  PageConfiguration get currentConfiguration =>
+      _pages.last.arguments as PageConfiguration;
 
   bool _onPopPage(Route<dynamic> route, result) {
     final didPop = route.didPop(result);
@@ -66,11 +69,11 @@ class AppRouterDelegate extends RouterDelegate<PageConfiguration>
 
   void addPage(PageConfiguration? configuration) {
     final shouldAddPage = _pages.isEmpty ||
-        (_pages.last.arguments as PageConfiguration).uiPage != configuration?.uiPage;
+        (_pages.last.arguments as PageConfiguration).uiPage !=
+            configuration?.uiPage;
     if (shouldAddPage)
       switch (configuration?.uiPage) {
         case Pages.splash:
-          // TODO: Handle this case.
           _addPageData(SplashPage(), splashConfig);
           break;
         case Pages.signIn:
@@ -84,6 +87,12 @@ class AppRouterDelegate extends RouterDelegate<PageConfiguration>
           break;
         case Pages.search:
           _addPageData(SearchPage(), searchConfig);
+          break;
+        case Pages.explore:
+          _addPageData(ExplorePage(), exploreConfig);
+          break;
+        case Pages.detail:
+          _addPageData(DetailPage(), detailConfig);
           break;
         default:
           break;
@@ -136,6 +145,12 @@ class AppRouterDelegate extends RouterDelegate<PageConfiguration>
         break;
       case Pages.search:
         searchConfig.currentPageAction = action;
+        break;
+      case Pages.explore:
+        exploreConfig.currentPageAction = action;
+        break;
+      case Pages.detail:
+        detailConfig.currentPageAction=action;
         break;
       default:
         break;
@@ -201,7 +216,8 @@ class AppRouterDelegate extends RouterDelegate<PageConfiguration>
   @override
   Future<void> setNewRoutePath(PageConfiguration configuration) {
     final shouldAddPage = _pages.isEmpty ||
-        (_pages.last.arguments as PageConfiguration).uiPage != configuration.uiPage;
+        (_pages.last.arguments as PageConfiguration).uiPage !=
+            configuration.uiPage;
     if (shouldAddPage) {
       _pages.clear();
       addPage(configuration);

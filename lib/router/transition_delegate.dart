@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class TransitionAnimationDelegate extends TransitionDelegate<void> {
   @override
   Iterable<RouteTransitionRecord> resolve({
-    required Map<RouteTransitionRecord?, RouteTransitionRecord> locationToExitingPageRoute,
     required List<RouteTransitionRecord> newPageRouteHistory,
+    required Map<RouteTransitionRecord?, RouteTransitionRecord> locationToExitingPageRoute,
     required Map<RouteTransitionRecord?, List<RouteTransitionRecord>> pageRouteToPagelessRoutes,
   }) {
     final results = <RouteTransitionRecord>[];

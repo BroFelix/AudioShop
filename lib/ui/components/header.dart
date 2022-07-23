@@ -2,8 +2,8 @@ import 'package:ecommerce/res/colors.dart';
 import 'package:ecommerce/res/styles.dart';
 import 'package:flutter/material.dart';
 
-class TabView extends StatelessWidget {
-  const TabView({
+class HeaderView extends StatelessWidget {
+  const HeaderView({
     Key? key,
     required this.title,
     required this.selected,
@@ -31,8 +31,9 @@ class TabView extends StatelessWidget {
         ),
         child: Text(
           title,
-          style:
-              AppTextStyle.tabTitle.copyWith(color: selected ? Colors.white : AppColors.darkGrey),
+          style: AppTextStyle.tabTitle.copyWith(
+            color: selected ? Colors.white : AppColors.darkGrey,
+          ),
         ),
       ),
     );

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "685168261597",
+    "firebase_url": "https://e-commerce-32389.firebaseio.com",
+    "project_id": "e-commerce-32389",
+    "storage_bucket": "e-commerce-32389.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685168261597:android:997ce5cb9e541ba7bfde34",
+        "android_client_info": {
+          "package_name": "us.farrukh.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685168261597-neoclsfho91m7f3fu7je2qm8easjhh39.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0ubdA4NtdemSbiVsfDozYiZx5t7B4OJs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685168261597-neoclsfho91m7f3fu7je2qm8easjhh39.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
