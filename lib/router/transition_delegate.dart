@@ -4,8 +4,10 @@ class TransitionAnimationDelegate extends TransitionDelegate<void> {
   @override
   Iterable<RouteTransitionRecord> resolve({
     required List<RouteTransitionRecord> newPageRouteHistory,
-    required Map<RouteTransitionRecord?, RouteTransitionRecord> locationToExitingPageRoute,
-    required Map<RouteTransitionRecord?, List<RouteTransitionRecord>> pageRouteToPagelessRoutes,
+    required Map<RouteTransitionRecord?, RouteTransitionRecord>
+        locationToExitingPageRoute,
+    required Map<RouteTransitionRecord?, List<RouteTransitionRecord>>
+        pageRouteToPagelessRoutes,
   }) {
     final results = <RouteTransitionRecord>[];
     for (final pageRoute in newPageRouteHistory) {
@@ -16,11 +18,9 @@ class TransitionAnimationDelegate extends TransitionDelegate<void> {
       if (exitingPageRoute.isWaitingForExitingDecision) {
         exitingPageRoute.markForRemove();
         final pagelessRoutes = pageRouteToPagelessRoutes[exitingPageRoute];
-        if (pagelessRoutes != null) {
-          for (final pagelessRoute in pagelessRoutes) {
+        if (pagelessRoutes != null)
+          for (final pagelessRoute in pagelessRoutes)
             pagelessRoute.markForRemove();
-          }
-        }
       }
       results.add(exitingPageRoute);
     }

@@ -59,11 +59,19 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           actions: [
-            CircleAvatar(
-              child: Image.asset(
-                'assets/images/avatar.png',
-                height: 32,
-                width: 32,
+            IconButton(
+              onPressed: () {
+                appState.currentAction = PageAction(
+                  state: PageState.addPage,
+                  page: profileConfig,
+                );
+              },
+              icon: CircleAvatar(
+                child: Image.asset(
+                  'assets/images/avatar.png',
+                  height: 32,
+                  width: 32,
+                ),
               ),
             ),
           ],
@@ -183,7 +191,8 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {},
                   child: Text(
                     'See All',
-                    style: AppTextStyle.title1.copyWith(color: AppColors.darkGrey),
+                    style:
+                        AppTextStyle.title1.copyWith(color: AppColors.darkGrey),
                   ),
                 ),
               ],

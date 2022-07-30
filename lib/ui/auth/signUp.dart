@@ -2,6 +2,7 @@ import 'package:ecommerce/res/colors.dart';
 import 'package:ecommerce/res/styles.dart';
 import 'package:ecommerce/router/app_state.dart';
 import 'package:ecommerce/router/pages.dart';
+import 'package:ecommerce/ui/components/green_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,8 +49,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     child: Text(
                       'Audio',
-                      style:
-                          AppTextStyle.header.copyWith(color: AppColors.white),
+                      style: AppTextStyle.header.copyWith(color: AppColors.white),
                     ),
                   ),
                   Text(
@@ -116,17 +116,10 @@ class _SignUpPageState extends State<SignUpPage> {
                       right: 24.0,
                       bottom: 24.0,
                     ),
-                    child: MaterialButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
+                    child: GreenButton(
                       height: constraints.maxHeight < 700 ? 120.h : 100.h,
-                      minWidth: 400,
-                      color: Colors.green[300],
-                      child: Text(
-                        "Sign Up",
-                        style: AppTextStyle.buttonText
-                            .copyWith(color: AppColors.white),
-                      ),
+                      width: 400,
+                      text: 'Sign Up',
                       onPressed: () {
                         appState.currentAction = PageAction(
                           state: PageState.replace,
@@ -139,8 +132,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       MaterialButton(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12)),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                         height: 65,
                         minWidth: 65,
                         color: AppColors.cleanWhite,
@@ -149,8 +141,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       SizedBox(width: 18.0),
                       MaterialButton(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12)),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                         height: 65,
                         minWidth: 65,
                         color: AppColors.cleanWhite,
@@ -159,8 +150,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       SizedBox(width: 18.0),
                       MaterialButton(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12)),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                         height: 65,
                         minWidth: 65,
                         color: AppColors.cleanWhite,
@@ -174,8 +164,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   RichText(
                     text: TextSpan(
-                      style: AppTextStyle.title0.copyWith(
-                          color: AppColors.white, fontWeight: FontWeight.w400),
+                      style: AppTextStyle.title0.copyWith(color: AppColors.white, fontWeight: FontWeight.w400),
                       text: "If you have an account? ",
                       children: [
                         TextSpan(

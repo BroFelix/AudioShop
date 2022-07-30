@@ -1,10 +1,13 @@
 import 'package:ecommerce/data/model/product.dart';
 import 'package:ecommerce/res/colors.dart';
 import 'package:ecommerce/res/styles.dart';
+import 'package:ecommerce/router/app_state.dart';
+import 'package:ecommerce/router/pages.dart';
 import 'package:ecommerce/ui/components/recent_search_item.dart';
 import 'package:ecommerce/ui/components/search_list_item.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -21,6 +24,7 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
+    final appState = context.read<AppState>();
     return LayoutBuilder(
         builder: (context, constraints) => Scaffold(
               appBar: AppBar(
@@ -36,7 +40,10 @@ class _SearchPageState extends State<SearchPage> {
                 ),
                 actions: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      appState.currentAction = PageAction(
+                          state: PageState.addPage, page: cartConfig);
+                    },
                     icon: Icon(FeatherIcons.shoppingCart),
                   ),
                 ],
@@ -52,8 +59,10 @@ class _SearchPageState extends State<SearchPage> {
                       child: TextField(
                         controller: _searchController,
                         onChanged: (value) {
-                          if (value.isNotEmpty) setState(() => _isFieldEmpty = false);
-                          if (value.isEmpty) setState(() => _isFieldEmpty = true);
+                          if (value.isNotEmpty)
+                            setState(() => _isFieldEmpty = false);
+                          if (value.isEmpty)
+                            setState(() => _isFieldEmpty = true);
                         },
                         cursorColor: AppColors.lightGrey,
                         decoration: InputDecoration(

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class RouteParser extends RouteInformationParser<PageConfiguration> {
   @override
-  Future<PageConfiguration> parseRouteInformation(RouteInformation routeInformation) async {
+  Future<PageConfiguration> parseRouteInformation(
+      RouteInformation routeInformation) async {
     final uri = Uri.parse(routeInformation.location ?? '');
     if (uri.pathSegments.isEmpty) return splashConfig;
     final path = uri.pathSegments[0];
@@ -20,6 +21,12 @@ class RouteParser extends RouteInformationParser<PageConfiguration> {
         return searchConfig;
       case explorePath:
         return exploreConfig;
+      case detailPath:
+        return detailConfig;
+      case cartPath:
+        return cartConfig;
+      case profilePath:
+        return profileConfig;
       default:
         return splashConfig;
     }
@@ -40,6 +47,12 @@ class RouteParser extends RouteInformationParser<PageConfiguration> {
         return const RouteInformation(location: searchPath);
       case Pages.explore:
         return const RouteInformation(location: explorePath);
+      case Pages.detail:
+        return const RouteInformation(location: detailPath);
+      case Pages.cart:
+        return const RouteInformation(location: cartPath);
+      case Pages.profile:
+        return const RouteInformation(location: profilePath);
       default:
         return const RouteInformation(location: splashPath);
     }

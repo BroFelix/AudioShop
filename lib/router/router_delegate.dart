@@ -4,7 +4,9 @@ import 'package:ecommerce/router/transition_delegate.dart';
 import 'package:ecommerce/ui/auth/signIn.dart';
 import 'package:ecommerce/ui/auth/signUp.dart';
 import 'package:ecommerce/ui/home/home.dart';
+import 'package:ecommerce/ui/profile/profile.dart';
 import 'package:ecommerce/ui/search/search.dart';
+import 'package:ecommerce/ui/shop/cart.dart';
 import 'package:ecommerce/ui/shop/detail.dart';
 import 'package:ecommerce/ui/shop/explore.dart';
 import 'package:ecommerce/ui/splash/splash.dart';
@@ -94,6 +96,12 @@ class AppRouterDelegate extends RouterDelegate<PageConfiguration>
         case Pages.detail:
           _addPageData(DetailPage(), detailConfig);
           break;
+        case Pages.cart:
+          _addPageData(CartPage(), cartConfig);
+          break;
+        case Pages.profile:
+          _addPageData(ProfilePage(), profileConfig);
+          break;
         default:
           break;
       }
@@ -150,7 +158,13 @@ class AppRouterDelegate extends RouterDelegate<PageConfiguration>
         exploreConfig.currentPageAction = action;
         break;
       case Pages.detail:
-        detailConfig.currentPageAction=action;
+        detailConfig.currentPageAction = action;
+        break;
+      case Pages.cart:
+        detailConfig.currentPageAction = action;
+        break;
+      case Pages.profile:
+        detailConfig.currentPageAction = action;
         break;
       default:
         break;

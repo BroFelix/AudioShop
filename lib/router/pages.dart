@@ -7,6 +7,8 @@ const String homePath = '/home';
 const String searchPath = '/search';
 const String explorePath = '/explore';
 const String detailPath = '/detail';
+const String cartPath = '/cart';
+const String profilePath = '/profile';
 
 enum Pages {
   splash,
@@ -16,6 +18,8 @@ enum Pages {
   search,
   explore,
   detail,
+  cart,
+  profile
 }
 
 class PageConfiguration {
@@ -66,4 +70,14 @@ PageConfiguration detailConfig = PageConfiguration(
   key: 'Detail',
   path: detailPath,
   uiPage: Pages.detail,
+);
+PageConfiguration cartConfig = PageConfiguration(
+  key: 'Cart',
+  path: cartPath,
+  uiPage: Pages.cart,
+);
+PageConfiguration profileConfig = PageConfiguration(
+  key: 'Profile',
+  path: profilePath,
+  uiPage: Pages.profile,
 );

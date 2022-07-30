@@ -3,12 +3,15 @@ import 'package:ecommerce/res/styles.dart';
 import 'package:ecommerce/ui/components/header.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform;
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, TargetPlatform;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FilterBottomSheet extends StatefulWidget {
   final height;
+
   FilterBottomSheet({Key? key, required this.height}) : super(key: key);
+
   @override
   State<FilterBottomSheet> createState() => _FilterBottomSheetState();
 }
@@ -81,7 +84,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               children: [
                 InkWell(
                   onTap: () {
-                    _sortSelected.setAll(0, [false, false, false, false, false, false]);
+                    _sortSelected
+                        .setAll(0, [false, false, false, false, false, false]);
                     setState(() {
                       _sortSelected[0] = true;
                     });
@@ -90,7 +94,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   child: Container(
                     padding: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
-                      color: _sortSelected[0] ? AppColors.green : AppColors.white,
+                      color:
+                          _sortSelected[0] ? AppColors.green : AppColors.white,
                       borderRadius: BorderRadius.circular(12.0),
                       border: !_sortSelected[0]
                           ? Border.all(color: AppColors.grey, width: 1.0)
@@ -98,13 +103,17 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                     ),
                     child: Text(
                       'Popularity',
-                      style: AppTextStyle.title.copyWith(color: _sortSelected[0] ? AppColors.white : AppColors.black),
+                      style: AppTextStyle.title.copyWith(
+                          color: _sortSelected[0]
+                              ? AppColors.white
+                              : AppColors.black),
                     ),
                   ),
                 ),
                 InkWell(
                   onTap: () {
-                    _sortSelected.setAll(0, [false, false, false, false, false, false]);
+                    _sortSelected
+                        .setAll(0, [false, false, false, false, false, false]);
                     setState(() {
                       _sortSelected[1] = true;
                     });
@@ -113,20 +122,26 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   child: Container(
                     padding: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
-                      color: _sortSelected[1] ? AppColors.green : AppColors.white,
+                      color:
+                          _sortSelected[1] ? AppColors.green : AppColors.white,
                       borderRadius: BorderRadius.circular(12.0),
-                      border:
-                          !_sortSelected[1] ? Border.all(color: AppColors.grey, width: 1.0) : Border.all(color: AppColors.grey, width: 1.0),
+                      border: !_sortSelected[1]
+                          ? Border.all(color: AppColors.grey, width: 1.0)
+                          : Border.all(color: AppColors.grey, width: 1.0),
                     ),
                     child: Text(
                       'Newest',
-                      style: AppTextStyle.title.copyWith(color: _sortSelected[1] ? AppColors.white : AppColors.black),
+                      style: AppTextStyle.title.copyWith(
+                          color: _sortSelected[1]
+                              ? AppColors.white
+                              : AppColors.black),
                     ),
                   ),
                 ),
                 InkWell(
                   onTap: () {
-                    _sortSelected.setAll(0, [false, false, false, false, false, false]);
+                    _sortSelected
+                        .setAll(0, [false, false, false, false, false, false]);
                     setState(() {
                       _sortSelected[2] = true;
                     });
@@ -135,20 +150,26 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   child: Container(
                     padding: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
-                      color: _sortSelected[2] ? AppColors.green : AppColors.white,
+                      color:
+                          _sortSelected[2] ? AppColors.green : AppColors.white,
                       borderRadius: BorderRadius.circular(12.0),
-                      border:
-                          !_sortSelected[2] ? Border.all(color: AppColors.grey, width: 1.0) : Border.all(color: AppColors.grey, width: 1.0),
+                      border: !_sortSelected[2]
+                          ? Border.all(color: AppColors.grey, width: 1.0)
+                          : Border.all(color: AppColors.grey, width: 1.0),
                     ),
                     child: Text(
                       'Oldest',
-                      style: AppTextStyle.title.copyWith(color: _sortSelected[2] ? AppColors.white : AppColors.black),
+                      style: AppTextStyle.title.copyWith(
+                          color: _sortSelected[2]
+                              ? AppColors.white
+                              : AppColors.black),
                     ),
                   ),
                 ),
                 InkWell(
                   onTap: () {
-                    _sortSelected.setAll(0, [false, false, false, false, false, false]);
+                    _sortSelected
+                        .setAll(0, [false, false, false, false, false, false]);
                     setState(() {
                       _sortSelected[3] = true;
                     });
@@ -157,20 +178,26 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   child: Container(
                     padding: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
-                      color: _sortSelected[3] ? AppColors.green : AppColors.white,
+                      color:
+                          _sortSelected[3] ? AppColors.green : AppColors.white,
                       borderRadius: BorderRadius.circular(12.0),
-                      border:
-                          !_sortSelected[3] ? Border.all(color: AppColors.grey, width: 1.0) : Border.all(color: AppColors.grey, width: 1.0),
+                      border: !_sortSelected[3]
+                          ? Border.all(color: AppColors.grey, width: 1.0)
+                          : Border.all(color: AppColors.grey, width: 1.0),
                     ),
                     child: Text(
                       'High Price',
-                      style: AppTextStyle.title.copyWith(color: _sortSelected[3] ? AppColors.white : AppColors.black),
+                      style: AppTextStyle.title.copyWith(
+                          color: _sortSelected[3]
+                              ? AppColors.white
+                              : AppColors.black),
                     ),
                   ),
                 ),
                 InkWell(
                   onTap: () {
-                    _sortSelected.setAll(0, [false, false, false, false, false, false]);
+                    _sortSelected
+                        .setAll(0, [false, false, false, false, false, false]);
                     setState(() {
                       _sortSelected[4] = true;
                     });
@@ -179,20 +206,26 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   child: Container(
                     padding: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
-                      color: _sortSelected[4] ? AppColors.green : AppColors.white,
+                      color:
+                          _sortSelected[4] ? AppColors.green : AppColors.white,
                       borderRadius: BorderRadius.circular(12.0),
-                      border:
-                          !_sortSelected[4] ? Border.all(color: AppColors.grey, width: 1.0) : Border.all(color: AppColors.grey, width: 1.0),
+                      border: !_sortSelected[4]
+                          ? Border.all(color: AppColors.grey, width: 1.0)
+                          : Border.all(color: AppColors.grey, width: 1.0),
                     ),
                     child: Text(
                       'Low Price',
-                      style: AppTextStyle.title.copyWith(color: _sortSelected[4] ? AppColors.white : AppColors.black),
+                      style: AppTextStyle.title.copyWith(
+                          color: _sortSelected[4]
+                              ? AppColors.white
+                              : AppColors.black),
                     ),
                   ),
                 ),
                 InkWell(
                   onTap: () {
-                    _sortSelected.setAll(0, [false, false, false, false, false, false]);
+                    _sortSelected
+                        .setAll(0, [false, false, false, false, false, false]);
                     setState(() {
                       _sortSelected[5] = true;
                     });
@@ -201,14 +234,19 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   child: Container(
                     padding: EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
-                      color: _sortSelected[5] ? AppColors.green : AppColors.white,
+                      color:
+                          _sortSelected[5] ? AppColors.green : AppColors.white,
                       borderRadius: BorderRadius.circular(12.0),
-                      border:
-                          !_sortSelected[5] ? Border.all(color: AppColors.grey, width: 1.0) : Border.all(color: AppColors.grey, width: 1.0),
+                      border: !_sortSelected[5]
+                          ? Border.all(color: AppColors.grey, width: 1.0)
+                          : Border.all(color: AppColors.grey, width: 1.0),
                     ),
                     child: Text(
                       'Review',
-                      style: AppTextStyle.title.copyWith(color: _sortSelected[5] ? AppColors.white : AppColors.black),
+                      style: AppTextStyle.title.copyWith(
+                          color: _sortSelected[5]
+                              ? AppColors.white
+                              : AppColors.black),
                     ),
                   ),
                 ),
@@ -234,6 +272,13 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Min Price',
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: AppColors.green,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
@@ -247,6 +292,13 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Max Price',
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: AppColors.green,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
@@ -262,7 +314,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               padding: EdgeInsets.only(
                 left: 18.0,
                 right: 18.0,
-                bottom: defaultTargetPlatform == TargetPlatform.iOS ? 48.0 : 16.0,
+                bottom:
+                    defaultTargetPlatform == TargetPlatform.iOS ? 48.0 : 16.0,
               ),
               child: MaterialButton(
                 height: 100.h,

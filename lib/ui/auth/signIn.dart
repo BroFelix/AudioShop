@@ -3,6 +3,7 @@ import 'package:ecommerce/res/styles.dart';
 import 'package:ecommerce/router/app_state.dart';
 import 'package:ecommerce/router/pages.dart';
 import 'package:ecommerce/ui/auth/signUp.dart';
+import 'package:ecommerce/ui/components/green_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,8 +47,7 @@ class _SignInPageState extends State<SignInPage> {
                     padding: EdgeInsets.only(top: 120.h, bottom: 4.h),
                     child: Text(
                       'Audio',
-                      style:
-                          AppTextStyle.header.copyWith(color: AppColors.white),
+                      style: AppTextStyle.header.copyWith(color: AppColors.white),
                     ),
                   ),
                   Text(
@@ -115,17 +115,10 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(24.0),
-                    child: MaterialButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
+                    child: GreenButton(
                       height: constraints.maxHeight < 700 ? 120.h : 100.h,
-                      minWidth: double.infinity,
-                      color: Colors.green[300],
-                      child: Text(
-                        "Sign In",
-                        style: AppTextStyle.buttonText
-                            .copyWith(color: Colors.white),
-                      ),
+                      width: double.infinity,
+                      text: 'Sign In',
                       onPressed: () {
                         appState.currentAction = PageAction(
                           state: PageState.replace,
@@ -136,8 +129,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   RichText(
                     text: TextSpan(
-                      style: AppTextStyle.title0.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.w400),
+                      style: AppTextStyle.title0.copyWith(color: Colors.white, fontWeight: FontWeight.w400),
                       text: "Don\'t have any account? ",
                       children: [
                         TextSpan(

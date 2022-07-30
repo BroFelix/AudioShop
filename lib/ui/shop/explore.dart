@@ -36,7 +36,12 @@ class _ExplorePageState extends State<ExplorePage> {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                appState.currentAction = PageAction(
+                  state: PageState.addPage,
+                  page: cartConfig,
+                );
+              },
               icon: Icon(FeatherIcons.shoppingCart),
             ),
           ],
@@ -70,8 +75,10 @@ class _ExplorePageState extends State<ExplorePage> {
                     builder: (BuildContext context) => InkWell(
                       onTap: () {
                         final height = _gridKey.currentContext!.size!.height;
-                        _selectedCategories.setAll(0, [false, false, false, false]);
-                        setState(() => _selectedCategories[0] = !_selectedCategories[0]);
+                        _selectedCategories
+                            .setAll(0, [false, false, false, false]);
+                        setState(() =>
+                            _selectedCategories[0] = !_selectedCategories[0]);
                         showBottomSheet<void>(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
@@ -80,13 +87,16 @@ class _ExplorePageState extends State<ExplorePage> {
                           )),
                           elevation: 3.0,
                           context: context,
-                          builder: (BuildContext context) => FilterBottomSheet(height: height),
+                          builder: (BuildContext context) =>
+                              FilterBottomSheet(height: height),
                         );
                       },
                       borderRadius: BorderRadius.circular(10.0),
                       child: DecoratedBox(
                         decoration: BoxDecoration(
-                          border: _selectedCategories[0] ? Border.all(color: AppColors.grey) : null,
+                          border: _selectedCategories[0]
+                              ? Border.all(color: AppColors.grey)
+                              : null,
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Padding(
@@ -110,14 +120,18 @@ class _ExplorePageState extends State<ExplorePage> {
                   ),
                   InkWell(
                     onTap: () {
-                      _selectedCategories.setAll(0, [false, false, false, false]);
-                      setState(() => _selectedCategories[1] = !_selectedCategories[1]);
+                      _selectedCategories
+                          .setAll(0, [false, false, false, false]);
+                      setState(() =>
+                          _selectedCategories[1] = !_selectedCategories[1]);
                     },
                     borderRadius: BorderRadius.circular(10.0),
                     child: Container(
                       padding: EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        border: _selectedCategories[1] ? Border.all(color: AppColors.grey) : null,
+                        border: _selectedCategories[1]
+                            ? Border.all(color: AppColors.grey)
+                            : null,
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Text(
@@ -131,14 +145,18 @@ class _ExplorePageState extends State<ExplorePage> {
                   ),
                   InkWell(
                     onTap: () {
-                      _selectedCategories.setAll(0, [false, false, false, false]);
-                      setState(() => _selectedCategories[2] = !_selectedCategories[2]);
+                      _selectedCategories
+                          .setAll(0, [false, false, false, false]);
+                      setState(() =>
+                          _selectedCategories[2] = !_selectedCategories[2]);
                     },
                     borderRadius: BorderRadius.circular(10.0),
                     child: Container(
                       padding: EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        border: _selectedCategories[2] ? Border.all(color: AppColors.grey) : null,
+                        border: _selectedCategories[2]
+                            ? Border.all(color: AppColors.grey)
+                            : null,
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Text(
@@ -152,14 +170,18 @@ class _ExplorePageState extends State<ExplorePage> {
                   ),
                   InkWell(
                     onTap: () {
-                      _selectedCategories.setAll(0, [false, false, false, false]);
-                      setState(() => _selectedCategories[3] = !_selectedCategories[3]);
+                      _selectedCategories
+                          .setAll(0, [false, false, false, false]);
+                      setState(() =>
+                          _selectedCategories[3] = !_selectedCategories[3]);
                     },
                     borderRadius: BorderRadius.circular(10.0),
                     child: Container(
                       padding: EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        border: _selectedCategories[3] ? Border.all(color: AppColors.grey) : null,
+                        border: _selectedCategories[3]
+                            ? Border.all(color: AppColors.grey)
+                            : null,
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Text(
@@ -185,29 +207,28 @@ class _ExplorePageState extends State<ExplorePage> {
                   ),
                 ),
                 child: GridView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisExtent: constraints.maxHeight > 700 ? 380.h : 350.h,
+                    mainAxisExtent: constraints.maxHeight > 700 ? 310.h : 350.h,
                     mainAxisSpacing: 16.0,
                     crossAxisSpacing: 16.0,
                   ),
                   itemCount: 3,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ProductView(
-                      onPressed: () {
-                        appState.currentAction = PageAction(
-                          state: PageState.addPage,
-                          page: detailConfig,
-                        );
-                      },
-                      title: 'TMA-2 HD Wireless',
-                      imageUrl: 'assets/images/headphone.png',
-                      price: 350,
-                      reviews: 89,
-                      rate: 5.0,
-                    );
-                  },
+                  itemBuilder: (BuildContext context, int index) => ProductView(
+                    onPressed: () {
+                      appState.currentAction = PageAction(
+                        state: PageState.addPage,
+                        page: detailConfig,
+                      );
+                    },
+                    title: 'TMA-2 HD Wireless',
+                    imageUrl: 'assets/images/headphone.png',
+                    price: 350,
+                    reviews: 89,
+                    rate: 5.0,
+                  ),
                 ),
               ),
             )
