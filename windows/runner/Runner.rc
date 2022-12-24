@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "us.farrukh" "\0"
-            VALUE "FileDescription", "ecommerce" "\0"
+            VALUE "FileDescription", "audioshop" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "ecommerce" "\0"
+            VALUE "InternalName", "audioshop" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 us.farrukh. All rights reserved." "\0"
-            VALUE "OriginalFilename", "ecommerce.exe" "\0"
-            VALUE "ProductName", "ecommerce" "\0"
+            VALUE "OriginalFilename", "audioshop.exe" "\0"
+            VALUE "ProductName", "audioshop" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

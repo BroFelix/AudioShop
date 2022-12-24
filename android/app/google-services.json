@@ -1,35 +1,41 @@
 {
   "project_info": {
-    "project_number": "685168261597",
-    "firebase_url": "https://e-commerce-32389.firebaseio.com",
-    "project_id": "e-commerce-32389",
-    "storage_bucket": "e-commerce-32389.appspot.com"
+    "project_number": "722426845137",
+    "project_id": "audiocommerce-3fcbf",
+    "storage_bucket": "audiocommerce-3fcbf.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:685168261597:android:997ce5cb9e541ba7bfde34",
+        "mobilesdk_app_id": "1:722426845137:android:836853b462365f43e972f0",
         "android_client_info": {
-          "package_name": "us.farrukh.ecommerce"
+          "package_name": "us.farrukh.audioshop"
         }
       },
       "oauth_client": [
         {
-          "client_id": "685168261597-neoclsfho91m7f3fu7je2qm8easjhh39.apps.googleusercontent.com",
+          "client_id": "722426845137-pfue7gp0hgv6a8fpo5d3mk0djdglk6r0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC0ubdA4NtdemSbiVsfDozYiZx5t7B4OJs"
+          "current_key": "AIzaSyDN3fdoybJ843PkvHB6KcEd3JNOZHaeLPI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "685168261597-neoclsfho91m7f3fu7je2qm8easjhh39.apps.googleusercontent.com",
+              "client_id": "722426845137-pfue7gp0hgv6a8fpo5d3mk0djdglk6r0.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "722426845137-h47nooegh3t7nt0oehkn3rnbfrbt4h92.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodOrder"
+              }
             }
           ]
         }
